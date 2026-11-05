@@ -47,10 +47,30 @@ void loop() {
       Serial.println("no echo detacted!");
     }else
     {
-      Serial.print("Duration: ");
-      Serial.println(duration);
+      float distance =(0.0343*duration)/2; //distance calculation
+      Serial.print("distance: ");
+      Serial.print(distance);
+      Serial.println(" cm ");
+
+      if (distance <=20)
+      {
+      //obstacle detected, stop
+      Serial.println("obstacle detected! STOP");
+
+      }else{
+       Serial.println("Path clear! Move forward");
+       }
     }
+
+
+
     delay(100);
+
+    
+     
+    
+
+
   }
 
  
